@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokencost"
+version = "0.1.0"
+description = "Estimate LLM prompt token count and cost across providers."
+requires-python = ">=3.9"
+
+[project.scripts]
+tokencost = "tokencost.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
