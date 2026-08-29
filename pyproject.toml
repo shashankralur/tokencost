@@ -7,6 +7,12 @@ name = "tokencost"
 version = "0.1.0"
 description = "Estimate LLM prompt token count and cost across providers."
 requires-python = ">=3.9"
+dependencies = [
+    "tiktoken>=0.5.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
 
 [project.scripts]
 tokencost = "tokencost.cli:main"

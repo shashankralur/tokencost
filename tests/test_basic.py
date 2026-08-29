@@ -4,4 +4,6 @@ from tokencost.cli import main
 def test_main(capsys):
     main()
     captured = capsys.readouterr()
-    assert captured.out == "Token Cost Is Active Now...\n"
+    
+    assert "Token Cost Is Active Now...\n" in captured.out
+    assert "token ->" in captured.out
