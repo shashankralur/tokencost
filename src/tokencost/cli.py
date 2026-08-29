@@ -44,15 +44,25 @@ def main():
         text = args.text
         
     token_count = count_openai_tokens(text)
-    
+    print(
+        f"{'Provider':<11}"
+        f"{'Model':<20}"
+        f"{'Tokens':<9}"
+        f"{'Cost (USD)':>10}"
+    )
+
+    print("-" * 50)
+
     for price in PRICES:
         cost = estimate_cost(token_count, price)
+
         print(
             f"{price.provider:<11}"
-            f"{price.model:<11}"
+            f"{price.model:<20}"
             f"{token_count:<9}"
-            f"{cost:.6f}"
+            f"${cost:.6f}"
         )
+
         
 if __name__ == "__main__":
     main()
